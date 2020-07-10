@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,27 +11,54 @@
         body {
             background-image: url(https://unblast.com/wp-content/uploads/2020/05/Light-Wood-Background-Texture-5.jpg);
         }
-        .logout-btn, .login-btn{
+
+        .add-student-btn{
+            background-color: cornsilk;
+            border-color:#2D7DAF;
+            color: #2D7DAF;
+            height: 4em;
+            width: 12em;
+            border-radius: 20px;
+            font-size: large;
+            font-weight: 900;
+            margin-top: 3em;
+            margin-bottom: 3em;
+            
+            
+        }
+
+        .add-student-btn:hover{
+            background-color:#f8df9e;
+            border-color: #f8df9e;
+            
+        }
+
+        .logout-btn, .login-btn, .btn-add-student{
             background-color: #2D7DAF;
             color: #F9D57A;
-            border-radius: 20px;
-            width: 5em;
-            height: 3em;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
-        .logout-btn:hover,.login-btn:hover{
+        .logout-btn, .login-btn{
+            width: 5em;
+            height: 3em; 
+            border-radius: 20px;  
+        }
+
+        .logout-btn:hover,.login-btn:hover, .btn-add-student:hover{
             background-color: #F9D57A;
             color: #2D7DAF;
         }
+
         .logout-btn{
-            float:right;
-            margin: 2em;
+            margin: 1em;
         }
+
         .login-container {
             text-align: center;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         .login-form-container{
-            background-color: #8bacc1;
+            background-color:hsla(203, 37%, 79%, 0.8);
             border-radius: 20px;
             margin: 5em 10em;
             padding: 3em;
@@ -39,8 +67,6 @@
             box-shadow: 10px 10px 5px 2px rgba(202,207,217,1);
         }
         .login-form {
-            /* margin-left: 15em;
-            margin-right: 15em; */
             margin-bottom: 3em;
             margin-top: 1em;
         }
@@ -48,13 +74,101 @@
             margin-top: 2em;
         }
         .nav-bar{
-            background-color: whitesmoke;
+            background-color: hsla(198, 24%, 88%, 0.79);
+        }
+        .main-logo-image{
+            margin-top: 0;
+        }
+        input{
+            border-radius: 20px;
+            height: 3em;
+            width: 15em;
+        }
+        .page{
+            margin-top: 2em;
+        }
+        .center-top-elements{
+        text-align: center;
         }
 
+        .child-card{
+            display: inline-block;
+            text-align: center;
+            background-color: hsla(203, 36%, 79%, 0.993);
+            margin: 1em;
+            padding: 1em;
+            border-radius: 10px;
+            width: 20em;
+        }
+
+        .child-image{
+            width: 7em;
+            height: 5em;
+            border-radius: 50%;
+            border-style: solid;
+            border-width: 2px;
+            border-color: white;
+        }
+
+        .toy-image{
+            width:4em;
+            margin: .2em;
+            border-radius: 25%;
+        }
+        .open-report-form-btn{
+            background-color: #2D7DAF;
+            color: hsla(203, 36%, 79%, 0.993);
+            border-color: hsla(203, 36%, 79%, 0.993);
+            border-radius: 20px;
+            margin-top: 1em;
+        }
+        .open-report-form-btn:hover{
+            background-color: hsla(198, 12%, 84%, 0.993);
+            color: #2D7DAF;
+            border-color: #2D7DAF;
+        }
+        .child-name{
+            margin-top: .5em;
+        }
+        .add-allergy, .add-toy {
+            border-radius: 50%;
+            height: 1.5em;
+            width: 1.7em;
+            font-size: 20px;
+            padding-bottom: 1.5em;
+        }
+        .add-allergy:hover, .add-toy:hover {
+            background-color: rgb(219, 170, 44);
+        }
+        .add-allergy{
+            margin-top: .5em;
+        }
+        .allergy-list {
+            
+            margin-left: 5em;
+            text-align: left;
+        }
+        p.allergy{
+            margin: 0;
+        }
+        .secondary-title{
+            color: #2D7DAF;
+        }
+        .potty-trained-image{
+            width: 4em;
+            height: 4em;
+            margin-top: -1em;
+            margin-bottom: 2em;
+        }
+
+        .modal-title{
+            color: #2D7DAF;
+        }
     </style>
 </head>
 <body>
-    <div class="login-container">
+    <!-- BEGIN screen when logged out-->
+    <div class="login-container d-none">
         <div class="logo">
             <img src="./assets/Sunshine Notes.png" class="logo-image" alt="logo">
         </div>  
@@ -62,19 +176,107 @@
             <h2>Account Login</h2>
             <form class="login-form">
                 <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" placeholder="Email address..."><br>
+                <input type="email" id="email" name="email" placeholder=" Email address..."><br>
                 <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" placeholder="Password..."><br><br>
+                <input type="password" id="password" name="password" placeholder=" Password..."><br><br>
                 <input type="submit" class = "login-btn" value="Login">
             </form> 
         </div>
+        <div class="footer">
+            <h4 style= "color: #2D7DAF; margin-top: -2em;">© Chaya Greisman</h4>
+        </div>
     </div>
-    <main class="d-none">
+    <!-- END screen when logged out -->
+    <!-- BEGIN screen once logged in -->
+    <main class="">
         <div class="nav-bar">
-            <h3>Welcome to Sunshine Notes!</h3>
             <button class= "logout-btn" type="button">Logout</button>
         </div>
+        <div class="page">
+            <div class="center-top-elements">
+                <img src="./assets/Sunshine Notes2.png" class="main-logo-image" alt="main-logo">
+                <br>
+                <button class= "add-student-btn" type="button" data-toggle="modal" data-target="#new-child-form-modal">ADD A STUDENT +</button>
+            </div>
+            <div id= "child-cards-container">
+                <!-- Child Cards get rendered in here -->
+            </div>
+        </div> 
     </main>
+ <!-- END screen once logged in -->
+<!-- New Student Form Modal-->
+  <div class="modal fade" id="new-child-form-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add a new Student:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Email address</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Example select</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect2">Example multiple select</label>
+                  <select multiple class="form-control" id="exampleFormControlSelect2">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Example textarea</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-add-student" id="add-student">Add Student</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of New Student Modal -->
+
+<!-- Send Report Form Modal-->
+    <div class="modal fade" id="report-form-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Sunshine Report:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-add-student" id="add-student">Send</button>
+            </div>
+            </div>
+        </div>
+    </div>
+<!-- Send Report Form Modal -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
