@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     function clickEventListeners(){
         document.addEventListener("click", e=>{
-            e.preventDefault()
+            
             if(e.target.className==="login-btn"){
                 const email = document.querySelector(".login-form").email.value
                 const password = document.querySelector(".login-form").password.value
@@ -66,7 +66,9 @@ document.addEventListener("DOMContentLoaded",()=>{
                 ${renderExistingToys(child.toys, child.id)}
                 <button type="button" class="add-toy" data-child-id=${child.id}>+</button>
             </div>
-            <button type="button" class="open-report-form-btn" data-child-id=${child.id} data-email=${child.parent_email} data-toggle="modal" data-target="#report-form-modal">Send Sunshine Note</button>
+            <form action="mailto:${child.parent_email}?subject=Daily Sunshine Report for ${child.name}!" method="post" enctype="text/plain">
+            <input type="submit" class="open-report-form-btn" value="Send Sunshine Note" data-child-id=${child.id} data-email=${child.parent_email}>
+            </form>
         </div>`
         cardContainer.insertAdjacentHTML("beforeend", card)
     }
@@ -100,3 +102,6 @@ document.addEventListener("DOMContentLoaded",()=>{
         }
         return toyImages
     }
+
+
+    
